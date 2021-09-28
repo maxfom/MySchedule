@@ -101,20 +101,24 @@ class ScheduleViewController: UIViewController {
 
 extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "idScheduleCell", for: indexPath) as! ScheduleTableViewCell
-        switch indexPath.row {
-        case 0:
-            cell.backgroundColor = #colorLiteral(red: 1, green: 0.2776755095, blue: 0.2164275646, alpha: 1)
-        case 1:
-            cell.backgroundColor = #colorLiteral(red: 0.6418386102, green: 1, blue: 0.345367521, alpha: 1)
-        default:
-            cell.backgroundColor = #colorLiteral(red: 0.7672937512, green: 0.864017725, blue: 0.9388908744, alpha: 1)
-        }
+//        switch indexPath.row {
+//        case 0:
+//            cell.backgroundColor = #colorLiteral(red: 1, green: 0.2776755095, blue: 0.2164275646, alpha: 1)
+//        case 1:
+//            cell.backgroundColor = #colorLiteral(red: 0.6418386102, green: 1, blue: 0.345367521, alpha: 1)
+//        default:
+//            cell.backgroundColor = #colorLiteral(red: 0.7672937512, green: 0.864017725, blue: 0.9388908744, alpha: 1)
+//        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }
 
@@ -156,6 +160,14 @@ extension ScheduleViewController {
             showHideButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             showHideButton.widthAnchor.constraint(equalToConstant: 100),
             showHideButton.heightAnchor.constraint(equalToConstant: 20)
+        ])
+        
+        view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: showHideButton.bottomAnchor, constant: 10),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
         ])
         
     }

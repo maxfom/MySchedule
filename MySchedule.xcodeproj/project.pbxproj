@@ -12,6 +12,7 @@
 		501B17212702505900280F51 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501B17202702505900280F51 /* ContactsViewController.swift */; };
 		501B17232702549800280F51 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501B17222702549800280F51 /* SceneDelegate.swift */; };
 		50B31535270269BA00F53349 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B31534270269BA00F53349 /* ScheduleTableViewCell.swift */; };
+		50CD6E322703BE7B00A2E9F6 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CD6E312703BE7B00A2E9F6 /* UIStackView.swift */; };
 		50F9D30627023A93008FF938 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F9D30527023A93008FF938 /* AppDelegate.swift */; };
 		50F9D30A27023A93008FF938 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F9D30927023A93008FF938 /* MainTabBarController.swift */; };
 		50F9D30F27023A9C008FF938 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50F9D30E27023A9C008FF938 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		501B17202702505900280F51 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		501B17222702549800280F51 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		50B31534270269BA00F53349 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		50CD6E312703BE7B00A2E9F6 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
 		50F9D30227023A93008FF938 /* MySchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50F9D30527023A93008FF938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50F9D30927023A93008FF938 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -94,10 +96,28 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		50CD6E2F2703BE6400A2E9F6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				50CD6E302703BE6C00A2E9F6 /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		50CD6E302703BE6C00A2E9F6 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				50CD6E312703BE7B00A2E9F6 /* UIStackView.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		50F9D2F927023A93008FF938 = {
 			isa = PBXGroup;
 			children = (
 				50F9D30427023A93008FF938 /* MySchedule */,
+				50B315322702692B00F53349 /* Model */,
+				50CD6E2F2703BE6400A2E9F6 /* Extensions */,
 				50F9D30327023A93008FF938 /* Products */,
 				615C5878E0BA00F1BAE5DF19 /* Pods */,
 				7875621D4519F89105062B92 /* Frameworks */,
@@ -115,7 +135,6 @@
 		50F9D30427023A93008FF938 /* MySchedule */ = {
 			isa = PBXGroup;
 			children = (
-				50B315322702692B00F53349 /* Model */,
 				501B171927023C7300280F51 /* Application */,
 				501B171A27023C8B00280F51 /* Controllers */,
 				501B171B27023CB100280F51 /* Resources */,
@@ -256,6 +275,7 @@
 				50B31535270269BA00F53349 /* ScheduleTableViewCell.swift in Sources */,
 				501B171D2702503500280F51 /* ScheduleViewController.swift in Sources */,
 				501B171F2702504E00280F51 /* TasksViewController.swift in Sources */,
+				50CD6E322703BE7B00A2E9F6 /* UIStackView.swift in Sources */,
 				50F9D30A27023A93008FF938 /* MainTabBarController.swift in Sources */,
 				50F9D30627023A93008FF938 /* AppDelegate.swift in Sources */,
 				501B17212702505900280F51 /* ContactsViewController.swift in Sources */,
