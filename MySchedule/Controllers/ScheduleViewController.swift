@@ -29,6 +29,8 @@ class ScheduleViewController: UIViewController {
     
     let tableView: UITableView = {
         let tableView = UITableView()
+        // оттягивание таблицы
+        //tableView.bounces = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -101,16 +103,16 @@ class ScheduleViewController: UIViewController {
 
 extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "idScheduleCell", for: indexPath) as! ScheduleTableViewCell
 //        switch indexPath.row {
 //        case 0:
-//            cell.backgroundColor = #colorLiteral(red: 1, green: 0.2776755095, blue: 0.2164275646, alpha: 1)
+//            cell.backgroundColor = #colorLiteral(red: 0.9332896471, green: 0.8727169633, blue: 0.744474113, alpha: 1)
 //        case 1:
-//            cell.backgroundColor = #colorLiteral(red: 0.6418386102, green: 1, blue: 0.345367521, alpha: 1)
+//            cell.backgroundColor = #colorLiteral(red: 0.7158417106, green: 0.9290938377, blue: 0.8217247128, alpha: 1)
 //        default:
 //            cell.backgroundColor = #colorLiteral(red: 0.7672937512, green: 0.864017725, blue: 0.9388908744, alpha: 1)
 //        }
@@ -118,7 +120,7 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 80
     }
 }
 
