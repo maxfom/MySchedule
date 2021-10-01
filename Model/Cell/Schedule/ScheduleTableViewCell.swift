@@ -10,14 +10,14 @@ import UIKit
 class ScheduleTableViewCell: UITableViewCell {
 
     
-    let lessonName = UILabel(text: "Программирование", font: .AvenirNextDemiBold18())
-    let teacherName = UILabel(text: "Антонов Антон Батонович", font: .AvenirNextDemiBold14(), aligment: .right)
+    let lessonName = UILabel(text: "Reading", font: .AvenirNextDemiBold18())
+    let teacherName = UILabel(text: "Fomichev Maxim Eduardovich", font: .AvenirNextDemiBold14(), aligment: .right)
     let lessonTime = UILabel(text: "08:00", font: .AvenirNextDemiBold16())
-    let typeLabel = UILabel(text: "Тип:", font: .AvenirNext14(), aligment: .right)
-    let lessonType = UILabel(text: "Практика", font: .AvenirNextDemiBold14())
-    let buildingLabel = UILabel(text: "Корпус", font: .AvenirNext14(), aligment: .right)
+    let typeLabel = UILabel(text: "Type:", font: .AvenirNext14(), aligment: .right)
+    let lessonType = UILabel(text: "Study", font: .AvenirNextDemiBold14())
+    let buildingLabel = UILabel(text: "Building", font: .AvenirNext14(), aligment: .right)
     let lessonBuilding = UILabel(text: "1", font: .AvenirNextDemiBold14())
-    let audLabel = UILabel(text: "Аудитория", font: .AvenirNext14(), aligment: .right)
+    let audLabel = UILabel(text: "Audience", font: .AvenirNext14(), aligment: .right)
     let lessonAud = UILabel(text: "300", font: .AvenirNextDemiBold12(), aligment: .right)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

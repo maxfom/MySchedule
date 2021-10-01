@@ -56,6 +56,13 @@ class ScheduleViewController: UIViewController {
         swipeAction()
         
         showHideButton.addTarget(self, action: #selector(showHideButtonTapped), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+    }
+    
+    @objc func addButtonTapped() {
+        print("TAPPED")
+        let scheduleOption = OptionsScheduleTableViewController()
+        navigationController?.pushViewController(scheduleOption, animated: true)
     }
     
     @objc func showHideButtonTapped() {
@@ -108,14 +115,6 @@ extension ScheduleViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "idScheduleCell", for: indexPath) as! ScheduleTableViewCell
-//        switch indexPath.row {
-//        case 0:
-//            cell.backgroundColor = #colorLiteral(red: 0.9332896471, green: 0.8727169633, blue: 0.744474113, alpha: 1)
-//        case 1:
-//            cell.backgroundColor = #colorLiteral(red: 0.7158417106, green: 0.9290938377, blue: 0.8217247128, alpha: 1)
-//        default:
-//            cell.backgroundColor = #colorLiteral(red: 0.7672937512, green: 0.864017725, blue: 0.9388908744, alpha: 1)
-//        }
         return cell
     }
     
