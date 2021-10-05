@@ -1,15 +1,15 @@
 //
-//  OptionsScheduleViewController.swift
+//  ScheduleColorViewController.swift
 //  MySchedule
 //
-//  Created by Максим Фомичев on 01.10.2021.
+//  Created by Максим Фомичев on 04.10.2021.
 //
 
 import UIKit
 
-class OptionsScheduleTableViewController: UITableViewController {
+class ScheduleColorViewController: UITableViewController {
     
-    let idOptionScheduleCell = "idOptionScheduleCell"
+    let idOptionColorCell = "idOptionColorCell"
     let idOptionScheduleHeader = "idOptionScheduleHeader"
     let headerNameArray = ["DATE AND TIME", "LESSON", "TEACHER", "COLOR", "PERIOD"]
 
@@ -22,7 +22,7 @@ class OptionsScheduleTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.968627451, alpha: 1)
-        tableView.register(OptionsScheduleTableViewCell.self, forCellReuseIdentifier: idOptionScheduleCell)
+        tableView.register(ColorScheduleTableViewCell.self, forCellReuseIdentifier: idOptionColorCell)
         tableView.separatorStyle = .none
         tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionScheduleHeader)
         
@@ -30,7 +30,7 @@ class OptionsScheduleTableViewController: UITableViewController {
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return 7
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,7 +49,7 @@ class OptionsScheduleTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionScheduleCell, for: indexPath) as! OptionsScheduleTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: idOptionColorCell, for: indexPath) as! ColorScheduleTableViewCell
         cell.cellConfigure(indexPath: indexPath)
         return cell
     }
@@ -69,45 +69,9 @@ class OptionsScheduleTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath) as! OptionsScheduleTableViewCell
-        
-        switch indexPath {
-        case [0, 0]:
-            alertDate(label: cell.nameCellLabel) { (numberWeekDay, date) in
-                print(numberWeekDay, date)
-            }
-        case [0, 1]:
-            alertTime(label: cell.nameCellLabel) { date in
-                print(date)
-            }
-            
-            
-        case [1, 0]:
-            alertForCellName(label: cell.nameCellLabel, name: "Name Lesson", placeholder: "Enter name lesson")
-        case [1, 1]:
-            alertForCellName(label: cell.nameCellLabel, name: "Type lesson", placeholder: "Enter type lesson")
-        case [1, 2]:
-                alertForCellName(label: cell.nameCellLabel, name: "Building number", placeholder: "Enter  number of building")
-        case [1, 3]:
-                alertForCellName(label: cell.nameCellLabel, name: "Audience", placeholder: "Enter number of audience")
-            
-            
-        case [2, 0]:
-            pushControllers(vc: TeachersViewController())
-        case [3, 0]:
-            pushControllers(vc: ScheduleColorViewController())
-            
-        default:
-            print("Tap OptionsTableView")
+            print("Tap Cell Color")
         }
     }
-    
-    func pushControllers(vc: UIViewController) {
-        let viewController = vc
-        navigationController?.navigationBar.topItem?.title = "Options"
-        navigationController?.pushViewController(viewController, animated: true)
-    }
-    
-}
+
 
 
