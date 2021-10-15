@@ -1,20 +1,21 @@
 //
-//  TaskOptionTableView.swift
+//  OptionsScheduleTableViewCell.swift
 //  MySchedule
 //
-//  Created by Максим Фомичев on 12.10.2021.
+//  Created by Максим Фомичев on 01.10.2021.
 //
 
 import UIKit
 
-class TaskOptionTableView: UITableViewCell {
+class OptionsTableViewCell: UITableViewCell {
 
-    let backgroundViewCell: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 10
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+    let backgroundViewCell: UIImageView = {
+        let imageView = UIImageView()
+        imageView.backgroundColor = .white
+        imageView.layer.cornerRadius = 10
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
     let nameCellLabel: UILabel = {
@@ -33,11 +34,7 @@ class TaskOptionTableView: UITableViewCell {
         return repSwitch
     }()
     
-    let cellNameArray = [["Date", "Time"],
-                         ["Name", "Type", "Building", "Audience"],
-                         ["Teacher name"],
-                         [""],
-                         ["Repeat every 7 days"]]
+
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -51,8 +48,8 @@ class TaskOptionTableView: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func cellConfigure(indexPath: IndexPath) {
-        nameCellLabel.text = cellNameArray[indexPath.section][indexPath.row]
+    func cellScheduleConfigure(nameArray: [[String]], indexPath: IndexPath) {
+        nameCellLabel.text = nameArray[indexPath.section][indexPath.row]
         
         if indexPath == [3, 0] {
             backgroundViewCell.backgroundColor = #colorLiteral(red: 0.05444354564, green: 0.5881057382, blue: 0.2993580401, alpha: 1)
@@ -61,6 +58,21 @@ class TaskOptionTableView: UITableViewCell {
         if indexPath == [4, 0] {
             repeatSwitch.isHidden = false
         }
+    }
+    
+    func cellTaskConfigure(nameArray: [String], indexPath: IndexPath) {
+        nameCellLabel.text = nameArray[indexPath.section]
+        
+        if indexPath == [3, 0] {
+            backgroundViewCell.backgroundColor = #colorLiteral(red: 0.05444354564, green: 0.5881057382, blue: 0.2993580401, alpha: 1)
+        }
+        
+    }
+    
+    func cellContactsConfigure(nameArray: [String], indexPath: IndexPath) {
+        nameCellLabel.text = nameArray[indexPath.section]
+        
+        indexPath.section == 4 ? backgroundViewCell.image = UIImage(systemName: "person.fill.badge.plus") : nil
     }
     
     @objc func switchChange(paramTarget: UISwitch) {
