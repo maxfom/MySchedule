@@ -1,13 +1,13 @@
 //
-//  OptionsScheduleTableViewCell.swift
+//  TaskOptionTableView.swift
 //  MySchedule
 //
-//  Created by Максим Фомичев on 01.10.2021.
+//  Created by Максим Фомичев on 12.10.2021.
 //
 
 import UIKit
 
-class OptionsScheduleTableViewCell: UITableViewCell {
+class TaskOptionTableView: UITableViewCell {
 
     let backgroundViewCell: UIView = {
         let view = UIView()

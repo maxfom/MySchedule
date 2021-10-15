@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ColorScheduleTableViewCell: UITableViewCell {
+class ColorTableViewCell: UITableViewCell {
 
     let backgroundViewCell: UIView = {
         let view = UIView()
@@ -30,7 +30,16 @@ class ColorScheduleTableViewCell: UITableViewCell {
     }
     
     func cellConfigure(indexPath: IndexPath) {
-
+        switch indexPath.section {
+        case 0: backgroundViewCell.backgroundColor = #colorLiteral(red: 0.3098039329, green: 0.01568627544, blue: 0.1294117719, alpha: 1)
+        case 1: backgroundViewCell.backgroundColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
+        case 2: backgroundViewCell.backgroundColor = #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1)
+        case 3: backgroundViewCell.backgroundColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
+        case 4: backgroundViewCell.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        case 5: backgroundViewCell.backgroundColor = #colorLiteral(red: 0.1215686277, green: 0.01176470611, blue: 0.4235294163, alpha: 1)
+        default:
+        backgroundViewCell.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+        }
     }
     
     
