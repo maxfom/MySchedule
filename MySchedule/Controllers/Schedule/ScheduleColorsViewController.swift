@@ -9,16 +9,16 @@ import UIKit
 
 class ScheduleColorsViewController: UITableViewController {
     
-    let idOptionColorCell = "idOptionColorCell"
-    let idOptionScheduleHeader = "idOptionScheduleHeader"
+    private let idOptionColorCell = "idOptionColorCell"
+    private let idOptionScheduleHeader = "idOptionScheduleHeader"
     
     let headerNameArray = ["RED", "ORANGE", "YELLOW", "GREEN", "BLUE", "DEEP BLUE", "PURPLE"]
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Options Schedule"
+        title = "Colors Schedule"
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -59,9 +59,23 @@ class ScheduleColorsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            print("Tap Cell Color")
+        switch indexPath.section {
+        case 0 : setColor(color: "4F0421")
+        case 1 : setColor(color: "851C0D")
+        case 2 : setColor(color: "B97A19")
+        case 3 : setColor(color: "0E964C")
+        case 4 : setColor(color: "2D7FC1")
+        case 5 : setColor(color: "1F036C")
+        case 6 : setColor(color: "8E5AF7")
+        default:
+            setColor(color: "FFFFFF")
         }
     }
-
-
-
+    
+    private func setColor(color: String) {
+        let scheduleOptions = self.navigationController?.viewControllers[1] as? ScheduleOptionsTableViewController
+        scheduleOptions?.hexColorCell = color
+        scheduleOptions?.tableView.reloadRows(at: [[3, 0], [4, 0]], with: .fade)
+        self.navigationController?.popViewController(animated: true)
+    }
+}

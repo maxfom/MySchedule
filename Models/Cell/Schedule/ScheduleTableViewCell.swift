@@ -10,15 +10,15 @@ import UIKit
 class ScheduleTableViewCell: UITableViewCell {
 
     
-    let lessonName = UILabel(text: "Reading", font: .AvenirNextDemiBold18())
+    let lessonName = UILabel(text: "", font: .AvenirNextDemiBold18())
     let teacherName = UILabel(text: "Fomichev Maxim Eduardovich", font: .AvenirNextDemiBold14(), aligment: .right)
-    let lessonTime = UILabel(text: "08:00", font: .AvenirNextDemiBold16())
+    let lessonTime = UILabel(text: "", font: .AvenirNextDemiBold16())
     let typeLabel = UILabel(text: "Type:", font: .AvenirNext14(), aligment: .right)
-    let lessonType = UILabel(text: "Study", font: .AvenirNextDemiBold14())
+    let lessonType = UILabel(text: "", font: .AvenirNextDemiBold14())
     let buildingLabel = UILabel(text: "Building", font: .AvenirNext14(), aligment: .right)
-    let lessonBuilding = UILabel(text: "1", font: .AvenirNextDemiBold14())
+    let lessonBuilding = UILabel(text: "", font: .AvenirNextDemiBold14())
     let audLabel = UILabel(text: "Audience", font: .AvenirNext14(), aligment: .right)
-    let lessonAud = UILabel(text: "300", font: .AvenirNextDemiBold12(), aligment: .right)
+    let lessonAud = UILabel(text: "", font: .AvenirNextDemiBold12(), aligment: .right)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -28,6 +28,20 @@ class ScheduleTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(model: ScheduleModel) {
+        let df = DateFormatter()
+        df.dateFormat = "HH:mm"
+        lessonName.text = model.scheduleName
+        teacherName.text = model.scheduleTeacher
+        guard let time = model.scheduleTime else { return }
+        lessonTime.text = df.string(from: time)
+        lessonType.text = model.scheduleType
+        lessonBuilding.text = model.scheduleBuilding
+        lessonAud.text = model.scheduleAudience
+        
+        backgroundColor = UIColor().colorFromHex("\(model.scheduleColor)")
     }
     
     func setConstraints() {

@@ -56,6 +56,16 @@ class TasksViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TasksTableViewCell.self, forCellReuseIdentifier: idTasksCell)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        
+        
+    }
+    
+    @objc func addButtonTapped() {
+        print("TAPPED")
+        let tasksOption = TaskOptionsTableView()
+        navigationController?.pushViewController(tasksOption, animated: true)
     }
     
     @objc func showHideButtonTapped() {

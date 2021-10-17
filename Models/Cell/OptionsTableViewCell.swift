@@ -8,7 +8,7 @@
 import UIKit
 
 class OptionsTableViewCell: UITableViewCell {
-
+    
     let backgroundViewCell: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .white
@@ -29,12 +29,13 @@ class OptionsTableViewCell: UITableViewCell {
         let repSwitch = UISwitch()
         repSwitch.isOn = true
         repSwitch.isHidden = true
-        repSwitch.onTintColor = #colorLiteral(red: 0.05444354564, green: 0.5881057382, blue: 0.2993580401, alpha: 1)
         repSwitch.translatesAutoresizingMaskIntoConstraints = false
         return repSwitch
     }()
     
-
+    var switchRepeatDelegate: SwtchRepeatProtocol?
+    
+    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -48,24 +49,18 @@ class OptionsTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func cellScheduleConfigure(nameArray: [[String]], indexPath: IndexPath) {
+    func cellScheduleConfigure(nameArray: [[String]], indexPath: IndexPath, hexColor: String) {
         nameCellLabel.text = nameArray[indexPath.section][indexPath.row]
+        let color = UIColor().colorFromHex(hexColor)
+        backgroundViewCell.backgroundColor = (indexPath.section == 3 ? color : .white)
+        repeatSwitch.isHidden = (indexPath.section == 4 ? false : true)
+        repeatSwitch.onTintColor = color
         
-        if indexPath == [3, 0] {
-            backgroundViewCell.backgroundColor = #colorLiteral(red: 0.05444354564, green: 0.5881057382, blue: 0.2993580401, alpha: 1)
-        }
-        
-        if indexPath == [4, 0] {
-            repeatSwitch.isHidden = false
-        }
     }
     
     func cellTaskConfigure(nameArray: [String], indexPath: IndexPath) {
         nameCellLabel.text = nameArray[indexPath.section]
-        
-        if indexPath == [3, 0] {
-            backgroundViewCell.backgroundColor = #colorLiteral(red: 0.05444354564, green: 0.5881057382, blue: 0.2993580401, alpha: 1)
-        }
+        backgroundViewCell.backgroundColor = (indexPath.section == 3 ? #colorLiteral(red: 0.05490196078, green: 0.5882352941, blue: 0.2980392157, alpha: 1) : .white)
         
     }
     
@@ -76,11 +71,7 @@ class OptionsTableViewCell: UITableViewCell {
     }
     
     @objc func switchChange(paramTarget: UISwitch) {
-        if paramTarget.isOn {
-            print("Switch On")
-        } else {
-            print("Switch Off")
-        }
+        switchRepeatDelegate?.switchRepeat(value: paramTarget.isOn)
     }
     
     func setConstraints() {

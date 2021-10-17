@@ -65,11 +65,11 @@ class ContactsOptionsTableViewController: UITableViewController {
         
         switch indexPath.section {
         case 0:
-            alertForCellName(label: cell.nameCellLabel, name: "Name contact", placeholder: "Enter name contact")
+            alertForCellName(label: cell.nameCellLabel, name: "Name contact", placeholder: "Enter name contact") { text in }
         case 1:
-            alertForCellName(label: cell.nameCellLabel, name: "Phone Contact", placeholder: "Enter phone contact")
+            alertForCellName(label: cell.nameCellLabel, name: "Phone Contact", placeholder: "Enter phone contact") { text in }
         case 2:
-            alertForCellName(label: cell.nameCellLabel, name: "Mail Contact", placeholder: "Enter mail contact")
+            alertForCellName(label: cell.nameCellLabel, name: "Mail Contact", placeholder: "Enter mail contact") { text in}
         case 3:
             alertFrinedOrTeacher(label: cell.nameCellLabel) { (type) in
                 print(type)

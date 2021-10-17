@@ -9,4 +9,6 @@ target 'MySchedule' do
 
  pod 'FSCalendar'
 
+ pod 'RealmSwift'
+
 end
