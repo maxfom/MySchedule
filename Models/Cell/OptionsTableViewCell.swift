@@ -58,9 +58,10 @@ class OptionsTableViewCell: UITableViewCell {
         
     }
     
-    func cellTaskConfigure(nameArray: [String], indexPath: IndexPath) {
+    func cellTasksConfigure(nameArray: [String], indexPath: IndexPath, hexColor: String) {
         nameCellLabel.text = nameArray[indexPath.section]
-        backgroundViewCell.backgroundColor = (indexPath.section == 3 ? #colorLiteral(red: 0.05490196078, green: 0.5882352941, blue: 0.2980392157, alpha: 1) : .white)
+        let color = UIColor().colorFromHex(hexColor)
+        backgroundViewCell.backgroundColor = (indexPath.section == 3 ? color : .white)
         
     }
     

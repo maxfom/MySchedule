@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		500BBAAB271594E600A5DFAA /* TaskOptionsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BBAAA271594E600A5DFAA /* TaskOptionsTableView.swift */; };
+		500BBAAB271594E600A5DFAA /* TaskOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BBAAA271594E600A5DFAA /* TaskOptionsTableViewController.swift */; };
 		500BBAAF27159DD200A5DFAA /* TaskColorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BBAAE27159DD200A5DFAA /* TaskColorsTableViewController.swift */; };
 		500BBAB12715A54B00A5DFAA /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BBAB02715A54B00A5DFAA /* ContactsTableViewController.swift */; };
 		500BBAB32715A66F00A5DFAA /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BBAB22715A66F00A5DFAA /* ContactsTableViewCell.swift */; };
@@ -19,6 +19,7 @@
 		5048A226271A15E6005B346D /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5048A225271A15E6005B346D /* RealmManager.swift */; };
 		5048A228271A2138005B346D /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5048A227271A2138005B346D /* UIColor.swift */; };
 		5048A22A271A281B005B346D /* AlertOk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5048A229271A281B005B346D /* AlertOk.swift */; };
+		5048A22C271F625E005B346D /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5048A22B271F625E005B346D /* TaskModel.swift */; };
 		505C0C86270B851000D3C820 /* AlertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C0C85270B851000D3C820 /* AlertDate.swift */; };
 		505C0C88270B8D8800D3C820 /* AlertTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C0C87270B8D8800D3C820 /* AlertTime.swift */; };
 		505C0C8A270B8F3100D3C820 /* AlertForCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C0C89270B8F3100D3C820 /* AlertForCellName.swift */; };
@@ -45,7 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		500BBAAA271594E600A5DFAA /* TaskOptionsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOptionsTableView.swift; sourceTree = "<group>"; };
+		500BBAAA271594E600A5DFAA /* TaskOptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOptionsTableViewController.swift; sourceTree = "<group>"; };
 		500BBAAE27159DD200A5DFAA /* TaskColorsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskColorsTableViewController.swift; sourceTree = "<group>"; };
 		500BBAB02715A54B00A5DFAA /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		500BBAB22715A66F00A5DFAA /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
@@ -57,6 +58,7 @@
 		5048A225271A15E6005B346D /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		5048A227271A2138005B346D /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		5048A229271A281B005B346D /* AlertOk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOk.swift; sourceTree = "<group>"; };
+		5048A22B271F625E005B346D /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		505C0C85270B851000D3C820 /* AlertDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDate.swift; sourceTree = "<group>"; };
 		505C0C87270B8D8800D3C820 /* AlertTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTime.swift; sourceTree = "<group>"; };
 		505C0C89270B8F3100D3C820 /* AlertForCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertForCellName.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				5048A222271A1377005B346D /* ScheduleModel.swift */,
+				5048A22B271F625E005B346D /* TaskModel.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -171,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				501B171E2702504E00280F51 /* TasksViewController.swift */,
-				500BBAAA271594E600A5DFAA /* TaskOptionsTableView.swift */,
+				500BBAAA271594E600A5DFAA /* TaskOptionsTableViewController.swift */,
 				500BBAAE27159DD200A5DFAA /* TaskColorsTableViewController.swift */,
 			);
 			path = Tasks;
@@ -439,6 +442,7 @@
 				509C2B822718A68C00898FA3 /* ContactsOptionsTableViewController.swift in Sources */,
 				505C0C88270B8D8800D3C820 /* AlertTime.swift in Sources */,
 				500BBAB32715A66F00A5DFAA /* ContactsTableViewCell.swift in Sources */,
+				5048A22C271F625E005B346D /* TaskModel.swift in Sources */,
 				509AD8AE27065201005F21C9 /* UIFont.swift in Sources */,
 				505C0C94270B98CC00D3C820 /* ColorsTableViewCell.swift in Sources */,
 				5048A226271A15E6005B346D /* RealmManager.swift in Sources */,
@@ -454,7 +458,7 @@
 				509AD8B327066184005F21C9 /* PressButtonProtocols.swift in Sources */,
 				505C0C8C270B91D100D3C820 /* ScheduleColorsViewController.swift in Sources */,
 				500BBAAF27159DD200A5DFAA /* TaskColorsTableViewController.swift in Sources */,
-				500BBAAB271594E600A5DFAA /* TaskOptionsTableView.swift in Sources */,
+				500BBAAB271594E600A5DFAA /* TaskOptionsTableViewController.swift in Sources */,
 				5090491F2707A3860069110A /* ScheduleOptionsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
