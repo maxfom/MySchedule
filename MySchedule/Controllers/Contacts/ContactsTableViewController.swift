@@ -6,12 +6,21 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ContactsTableViewController: UITableViewController {
     
     let searchController = UISearchController()
     
     let idContactsCell = "idContactsCell"
+    
+    private let localRealm = try! Realm()
+    private var contactsArray: Results<ContactModel>!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,18 +42,19 @@ class ContactsTableViewController: UITableViewController {
     }
     
     @objc func addButtonTapped() {
-        print("TAPPED")
         let contactOption = ContactsOptionsTableViewController()
         navigationController?.pushViewController(contactOption, animated: true)
     }
 
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return contactsArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idContactsCell, for: indexPath) as! ContactsTableViewCell
+        let model = contactsArray[indexPath.row]
+        cell.configure(model: model)
         return cell
     }
     
@@ -54,6 +64,17 @@ class ContactsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             print("Tap contacts")
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let editingRow = contactsArray[indexPath.row]
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, completionHandler in
+            RealmManager.shared.deleteContactModel(model: editingRow)
+            tableView.reloadData()
+        }
+        return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
     func pushControllers(vc: UIViewController) {

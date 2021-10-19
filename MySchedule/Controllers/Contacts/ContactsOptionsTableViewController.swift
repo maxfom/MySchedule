@@ -9,18 +9,21 @@ import UIKit
 
 class ContactsOptionsTableViewController: UITableViewController {
     
-    let idOptionContactCell = "idOptionContactCell"
-    let idOptionContactHeader = "idOptionContactHeader"
+    private let idOptionContactCell = "idOptionContactCell"
+    private let idOptionContactHeader = "idOptionContactHeader"
     
-    let headerNameArray = ["NAME", "PHONE", "MAIL", "TYPE", "CHOOSE IMAGE"]
+    private let headerNameArray = ["NAME", "PHONE", "MAIL", "TYPE", "CHOOSE IMAGE"]
     
-    let cellNameArray = ["Name", "Phone", "Mail", "Type",  ""]
-
+    private let cellNameArray = ["Name", "Phone", "Mail", "Type",  ""]
+    
+    private var imageIsChanged = false
+    private var contactModel = ContactModel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Options Schedule"
+        title = "Options Contacts"
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -29,6 +32,22 @@ class ContactsOptionsTableViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.register(HeaderOptionsTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionContactHeader)
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
+        
+        
+    }
+    
+    @objc private func saveButtonTapped() {
+        
+        if contactModel.contactName == "Unknown" || contactModel.contactType == "Unknown"  {
+            alertOk(title: "Error", message: "Required fields: Name, Type")
+        } else {
+            setImageModel()
+            RealmManager.shared.saveContactModel(model: contactModel)
+            contactModel = ContactModel()
+            alertOk(title: "Success", message: nil)
+            tableView.reloadData()
+        }
         
     }
     
