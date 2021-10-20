@@ -14,19 +14,19 @@ class ScheduleOptionsTableViewController: UITableViewController {
     
     let headerNameArray = ["DATE AND TIME", "LESSON", "TEACHER", "COLOR", "PERIOD"]
     
-    let cellNameArray = [["Date", "Time"],
+    var cellNameArray = [["Date", "Time"],
                          ["Name", "Type", "Building", "Audience"],
                          ["Teacher name"],
                          [""],
                          ["Repeat every 7 days"]]
     
-    private var scheduleModel = ScheduleModel()
+    var scheduleModel = ScheduleModel()
     
     var hexColorCell: String = "0E964C"
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+//        tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -55,6 +55,7 @@ class ScheduleOptionsTableViewController: UITableViewController {
         scheduleModel = ScheduleModel()
             alertOk(title: "Success", message: nil)
         hexColorCell = "0E964C"
+        cellNameArray[2][0] = "Teacher name"
         tableView.reloadData()
         }
     }
@@ -128,7 +129,7 @@ class ScheduleOptionsTableViewController: UITableViewController {
                 self.scheduleModel.scheduleAudience = text
             }
         case [2, 0]:
-            pushControllers(vc: TeachersViewController()) 
+            pushControllers(vc: TeachersTableViewController()) 
         case [3, 0]:
             pushControllers(vc: ScheduleColorsViewController())
         default:
