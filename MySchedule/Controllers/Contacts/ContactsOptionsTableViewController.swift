@@ -43,12 +43,30 @@ class ContactsOptionsTableViewController: UITableViewController {
             alertOk(title: "Error", message: "Required fields: Name, Type")
         } else {
             setImageModel()
+            
             RealmManager.shared.saveContactModel(model: contactModel)
             contactModel = ContactModel()
+            
             alertOk(title: "Success", message: nil)
             tableView.reloadData()
         }
         
+    }
+    
+    @objc private func setImageModel() {
+        
+        if imageIsChanged {
+            let cell = tableView.cellForRow(at: [4, 0]) as! OptionsTableViewCell
+            
+            let image = cell.backgroundViewCell.image
+            guard  let imageData = image?.pngData() else { return }
+            contactModel.contactPhoto = imageData
+            
+            cell.backgroundViewCell.contentMode = .scaleAspectFit
+            imageIsChanged = false
+        } else {
+            contactModel.contactPhoto = nil
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -84,14 +102,21 @@ class ContactsOptionsTableViewController: UITableViewController {
         
         switch indexPath.section {
         case 0:
-            alertForCellName(label: cell.nameCellLabel, name: "Name contact", placeholder: "Enter name contact") { text in }
+            alertForCellName(label: cell.nameCellLabel, name: "Name contact", placeholder: "Enter name contact") { text in
+                self.contactModel.contactName = text
+            }
         case 1:
-            alertForCellName(label: cell.nameCellLabel, name: "Phone Contact", placeholder: "Enter phone contact") { text in }
+            alertForCellName(label: cell.nameCellLabel, name: "Phone Contact", placeholder: "Enter phone contact") { text in
+                self.contactModel.contactPhone = text
+            }
         case 2:
-            alertForCellName(label: cell.nameCellLabel, name: "Mail Contact", placeholder: "Enter mail contact") { text in}
+            alertForCellName(label: cell.nameCellLabel, name: "Mail Contact", placeholder: "Enter mail contact") { text in
+                self.contactModel.contactMail = text
+            }
         case 3:
-            alertFrinedOrTeacher(label: cell.nameCellLabel) { (type) in
-                print(type)
+            alertFrinedOrTeacher(label: cell.nameCellLabel) { type in
+                self.contactModel.contactType = type
+                
             }
         case 4:
             alertPhotoCamer { [self] source in
@@ -128,6 +153,7 @@ extension ContactsOptionsTableViewController: UINavigationControllerDelegate, UI
         cell.backgroundViewCell.image = info[.editedImage] as? UIImage
         cell.backgroundViewCell.contentMode = .scaleAspectFill
         cell.backgroundViewCell.clipsToBounds = true
+        imageIsChanged = true
         dismiss(animated: true)
     }
 }

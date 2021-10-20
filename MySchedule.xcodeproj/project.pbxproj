@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		500BBAAB271594E600A5DFAA /* TaskOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BBAAA271594E600A5DFAA /* TaskOptionsTableViewController.swift */; };
 		500BBAAF27159DD200A5DFAA /* TaskColorsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BBAAE27159DD200A5DFAA /* TaskColorsTableViewController.swift */; };
-		500BBAB12715A54B00A5DFAA /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BBAB02715A54B00A5DFAA /* ContactsTableViewController.swift */; };
+		500BBAB12715A54B00A5DFAA /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BBAB02715A54B00A5DFAA /* ContactsViewController.swift */; };
 		500BBAB32715A66F00A5DFAA /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500BBAB22715A66F00A5DFAA /* ContactsTableViewCell.swift */; };
 		501B171D2702503500280F51 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501B171C2702503500280F51 /* ScheduleViewController.swift */; };
 		501B171F2702504E00280F51 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501B171E2702504E00280F51 /* TasksViewController.swift */; };
@@ -49,7 +49,7 @@
 /* Begin PBXFileReference section */
 		500BBAAA271594E600A5DFAA /* TaskOptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOptionsTableViewController.swift; sourceTree = "<group>"; };
 		500BBAAE27159DD200A5DFAA /* TaskColorsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskColorsTableViewController.swift; sourceTree = "<group>"; };
-		500BBAB02715A54B00A5DFAA /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		500BBAB02715A54B00A5DFAA /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		500BBAB22715A66F00A5DFAA /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		501B171C2702503500280F51 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		501B171E2702504E00280F51 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
@@ -187,7 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				509C2B812718A68C00898FA3 /* ContactsOptionsTableViewController.swift */,
-				500BBAB02715A54B00A5DFAA /* ContactsTableViewController.swift */,
+				500BBAB02715A54B00A5DFAA /* ContactsViewController.swift */,
 				509C2B832718A6E100898FA3 /* TeachersViewController.swift */,
 			);
 			path = Contacts;
@@ -454,7 +454,7 @@
 				501B24022707ACA1005C034E /* HeaderOptionsTableViewCell.swift in Sources */,
 				5048A22E271F6D6A005B346D /* ContactModel.swift in Sources */,
 				5048A228271A2138005B346D /* UIColor.swift in Sources */,
-				500BBAB12715A54B00A5DFAA /* ContactsTableViewController.swift in Sources */,
+				500BBAB12715A54B00A5DFAA /* ContactsViewController.swift in Sources */,
 				509C2B88271A0B1E00898FA3 /* AlertPhotoCamera.swift in Sources */,
 				509AD8B027065926005F21C9 /* TasksTableViewCell.swift in Sources */,
 				509049272707A67F0069110A /* OptionsTableViewCell.swift in Sources */,
